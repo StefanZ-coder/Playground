@@ -29,13 +29,13 @@ namespace Playground
         public MainWindow()
         {
             InitializeComponent();
-            _animationsTimer.Interval = TimeSpan.FromMilliseconds(50);
+            _animationsTimer.Interval = TimeSpan.FromMilliseconds(30);
             _animationsTimer.Tick += MovingBall;
         }
 
         private void MovingBall(object? sender, EventArgs e)
         {
-            var x = Canvas.GetLeft(Ball);
+            double x = Canvas.GetLeft(Ball);
 
             if (goRightLeft)
             {
@@ -56,7 +56,7 @@ namespace Playground
             }
 
 
-            var y = Canvas.GetTop(Ball);
+            double y = Canvas.GetTop(Ball);
 
             if (goUpDown)
             {
@@ -88,6 +88,15 @@ namespace Playground
             {
                 _animationsTimer.Start();
                 count = 0;
+                CountLabel.Content = $"{count} Clicks";
+            }
+        }
+
+        private void Ball_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if(_animationsTimer.IsEnabled)
+            {
+                count += 1;
                 CountLabel.Content = $"{count} Clicks";
             }
         }

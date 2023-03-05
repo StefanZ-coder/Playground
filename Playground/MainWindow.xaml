@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Playground"
         mc:Ignorable="d"
-        Title="Playground" Height="400" Width="500">
+        Title="Playground" Height="400" Width="600">
 
     <Grid>
 
@@ -21,13 +21,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
 
         <Button Content="Start/Stop" Name="StartStopButton" HorizontalAlignment="Center" Padding="5" Margin="20" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Click="StartStopButton_Click"/>
         <Label  Content="0 Cklicks" Name="CountLabel" HorizontalAlignment="Center" Margin="20" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0"/>
-        <Canvas Name="FootballField"  Background="DarkGreen" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="300" Width="300">
-            <Ellipse Name="Ball" Width="15" Height="15" Fill="Black" Canvas.Left="20"   Canvas.Top="20"/>
+        <Canvas Name="FootballField"  Background="DarkGreen" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="365" Width="385">
+            <Ellipse Name="Ball" Width="15" Height="15" Fill="Black" Canvas.Left="20"  Canvas.Top="50" MouseUp="Ball_MouseUp"/>
         </Canvas>
 
 
